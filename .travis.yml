@@ -1,13 +1,11 @@
 language: android
 android:
   components:
-    - build-tools-26.0.2
-    - android-26
-    - sys-img-armeabi-v7a-android-tv-l
-    - add-on
-    - extra
-before_install:
-  - yes | sdkmanager "platforms;android-27"
+    - tools
+    - platform-tools
+    - build-tools-25.0.2
+    - android-25
+    - extra-android-m2repository
 install:
   - ./gradlew assembleDebug
 script:
