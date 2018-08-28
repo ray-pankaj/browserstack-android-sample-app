@@ -10,7 +10,6 @@ before_install:
 install:
   - ./gradlew assembleDebug
 script:
-  - echo $BROWSERSTACK_APP_ID
   - ./gradlew test
 addons:
   browserstack:
