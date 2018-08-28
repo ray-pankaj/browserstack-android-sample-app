@@ -9,9 +9,8 @@ before_install:
   - yes | sdkmanager "platforms;android-27"
 install:
   - ./gradlew assembleDebug
-before_script:
-  - echo $BROWSERSTACK_APP_ID
 script:
+  - echo $BROWSERSTACK_APP_ID
   - ./gradlew test
 addons:
   browserstack:
