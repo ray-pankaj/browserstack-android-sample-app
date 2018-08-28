@@ -6,6 +6,8 @@ android:
     - sys-img-armeabi-v7a-android-tv-l
     - add-on
     - extra
+before_install:
+  - yes | sdkmanager "platforms;android-27"
 install:
   - ./gradlew assembleDebug
 script:
