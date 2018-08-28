@@ -1,4 +1,6 @@
 language: android
+licenses:
+    - 'android-sdk-license-.+'
 install:
   - ./gradlew assembleDebug
 script:
