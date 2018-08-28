@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import static java.lang.*;
 
 import java.net.URL;
 import java.util.List;
@@ -33,6 +34,7 @@ public class MainActivityUnitTest {
 
     // App url of the uploaded app on BrowserStack.
     String app = System.getenv("BROWSERSTACK_APP_ID");
+    System.out.println(app);
     capabilities.setCapability("app", app);
 
     driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
