@@ -33,7 +33,9 @@ public class MainActivityUnitTest {
 
     // App url of the uploaded app on BrowserStack.
     String app = System.getenv("BROWSERSTACK_APP_ID");
-    System.out.println(app);
+    System.out.println("USER" + username);
+    System.out.println("KEY" + accessKey);
+    System.out.println("App ID" + app);
     capabilities.setCapability("app", app);
 
     driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
