@@ -3,11 +3,10 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-25.0.2
-    - android-25
-    - extra-android-m2repository
+    - tools
+    - build-tools
 before_install:
-  - yes | sdkmanager "platforms;android-25"
+  - yes | sdkmanager "platforms;android-27"
 install:
   - ./gradlew assembleDebug
 script:
