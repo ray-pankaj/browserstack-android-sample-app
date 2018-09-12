@@ -13,6 +13,7 @@ script:
   - ./gradlew test
 addons:
   browserstack:
-    username: "pankajahuja"
-    access_key: "aCxhDStUopf8tsyz4d55"
+    username: "pankajahuja2"
+    access_key:
+      secure: "NRoC5Or19gh0s1vy5wsrJMPqB4glQ3e+peAWLMdGVmOSGthLUnZitiIIFQQ5gfU/JZSv8yRk3sRRcEGAix747evFUJlpOfRmR/E8ejfTXx6q6vIPfWJ4ZqVjVM3ewE+99Mt2wbi1VEDYEP+ROAhUXWLlCZOXTEj0mG3tmYAfTC9lxl7pjm3JYd51tn+mWbjx1s07BTU5fLTPT4Ujv3UglvefKiiK1rZpF6We8lOaBctZHpiStLeDbJSnoNChDcg/54Tt2gzOgxhGyZTY2OCPa+POAVV/hi9eCCqcfCbFRLYxW/t4W4rJaSCIovpJpBjltA/oKHfPWoCo0b3VyS74/vEKoJzWcdokdmvYNKWziWfPFYnPOO9mgI5C4Gt5dv6ZeOHCCIpdKdFjUWjil36incKZOIjP5c/+btWKoym7MvF1Ik9wn7NAkot2hegGVHJtJ/srcdWL2KhpdKzjB7vW6/yPRTdZ0f2l+O8z685wG+kBlUT1R4uMIbGJOm9dDt8rgKNEJYOyQrLfY77CeLEM0qVAajOBNsrIbm3uVWJ7JKU/UDsfNNI7c+VpxW/frbPPq4ENA1+fAZ81yCanj1ilM6PW2zyBPncI5yxY+I6NiQ2jo7w2dIJFwDocl+rf5PnjWdwetkiRTfGblyYGv66uFAN3zfIGqyMYfqvo/mi4VXE="
     app_path: "browserstack_android_sample/build/outputs/apk/debug/browserstack_android_sample-debug.apk"
