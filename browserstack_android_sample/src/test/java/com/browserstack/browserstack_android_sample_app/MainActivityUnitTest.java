@@ -41,10 +41,10 @@ public class MainActivityUnitTest {
     driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
   }
 
-  @After
-  public void tearDown() throws Exception {
-    driver.quit();
-  }
+  // @After
+  // public void tearDown() throws Exception {
+  //   driver.quit();
+  // }
 
 
   @Test
