@@ -15,4 +15,3 @@ addons:
   browserstack:
     username: "pankajahuja1"
     access_key: 'aCxhDStUopf8tsyz4d55'
-    app_path: "browserstack_android_sample/build/outputs/apk/debug/browserstack_android_sample-debug.apk"
