@@ -7,7 +7,7 @@ android:
     - tools
     - build-tools
 before_install:
-  - yes | sdkmanager "platforms;android-25"
+  - yes | sdkmanager "platforms;android-27"
 install:
   - ./gradlew clean assembleDebug
 script:
