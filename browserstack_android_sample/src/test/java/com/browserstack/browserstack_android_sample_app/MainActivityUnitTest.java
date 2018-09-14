@@ -17,8 +17,8 @@ public class MainActivityUnitTest {
 
   private AndroidDriver driver;
 
-  @Before
-  public void setUp() throws Exception {
+  @Test
+  public void checkIfHelloWorldTextViewIsPresent() throws Exception {
     String server = "hub.browserstack.com";
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -39,11 +39,6 @@ public class MainActivityUnitTest {
     capabilities.setCapability("app", app);
 
     driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
-    assert(driver != null);
-  }
-
-  @Test
-  public void checkIfHelloWorldTextViewIsPresent() throws Exception {
     assert(driver != null);
     String assertionLabel = "TextView with text 'HelloWorld' is present.";
     Thread.sleep(50);
