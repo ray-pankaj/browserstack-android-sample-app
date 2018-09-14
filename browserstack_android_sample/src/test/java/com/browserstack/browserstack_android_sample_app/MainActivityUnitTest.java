@@ -17,8 +17,8 @@ public class MainActivityUnitTest {
 
   private AndroidDriver driver;
 
-  @Test
-  public void checkIfHelloWorldTextViewIsPresent() throws Exception {
+  @Before
+  public void setUp() throws Exception {
     String server = "hub.browserstack.com";
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -27,22 +27,48 @@ public class MainActivityUnitTest {
     capabilities.setCapability("name", "single_appium_test");
     capabilities.setCapability("browserstack.debug", true);
 
-    String username = "pankajahuja1";
+    String username = System.getenv("BROWSERSTACK_USER");
 
-    String accessKey = "aCxhDStUopf8tsyz4d55";
+    String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
     // App url of the uploaded app on BrowserStack.
-    String app = "bs://32306d0bba14f22b98c3c83401ceedc831aa551c";
+    String app = System.getenv("BROWSERSTACK_APP_ID");
     System.out.println("USER" + username);
     System.out.println("KEY" + accessKey);
     System.out.println("App ID" + app);
     capabilities.setCapability("app", app);
 
-    driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
+    try {
+      driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
+    }
+    catch (Exception e) {
+      System.out.println(e.printStackTrace());
+    }
+    assert(driver != null);
+  }
+
+  @After
+  public void tearDown() throws Exception {
+    try {
+      driver.quit();
+    }
+    catch (Exception e) {
+      System.out.println(e.printStackTrace());
+    }
+  }
+
+
+  @Test
+  public void checkIfHelloWorldTextViewIsPresent() throws Exception {
     assert(driver != null);
     String assertionLabel = "TextView with text 'HelloWorld' is present.";
     Thread.sleep(50);
-    List<AndroidElement> elements = driver.findElementsById("HelloWorldTextView");
+    try {
+      List<AndroidElement> elements = driver.findElementsById("HelloWorldTextView");
+    }
+    catch (Exception e) {
+      System.out.println(e.printStackTrace());
+    }
     if (elements.size() > 0) {
       String textViewText = elements.get(0).getText();
       assertTrue(assertionLabel, textViewText.equals("Hello World!"));
