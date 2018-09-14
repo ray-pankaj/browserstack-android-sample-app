@@ -12,7 +12,7 @@ install:
   - ./gradlew clean assembleDebug
 script:
   - ls browserstack_android_sample/build/outputs/apk/debug/
-  - ./gradlew test
+  - ./gradlew test 1>&2
 addons:
   browserstack:
     username: "pankajahuja1"
