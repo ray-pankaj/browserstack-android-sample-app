@@ -39,16 +39,19 @@ public class MainActivityUnitTest {
     capabilities.setCapability("app", app);
 
     driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
+    assert(driver != null);
   }
 
-  // @After
-  // public void tearDown() throws Exception {
-  //   driver.quit();
-  // }
+  @After
+  public void tearDown() throws Exception {
+    assert(driver != null);
+    driver.quit();
+  }
 
 
   @Test
   public void checkIfHelloWorldTextViewIsPresent() throws Exception {
+    assert(driver != null);
     String assertionLabel = "TextView with text 'HelloWorld' is present.";
     Thread.sleep(50);
     List<AndroidElement> elements = driver.findElementsById("HelloWorldTextView");
