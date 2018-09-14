@@ -1,5 +1,4 @@
 language: android
-jdk: oraclejdk8
 android:
   components:
     - tools
@@ -12,7 +11,7 @@ install:
   - ./gradlew clean assembleDebug
 script:
   - ls browserstack_android_sample/build/outputs/apk/debug/
-  - ./gradlew test 1>&2
+  - ./gradlew test
 addons:
   browserstack:
     username: "pankajahuja1"

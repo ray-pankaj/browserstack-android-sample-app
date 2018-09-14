@@ -27,12 +27,12 @@ public class MainActivityUnitTest {
     capabilities.setCapability("name", "single_appium_test");
     capabilities.setCapability("browserstack.debug", true);
 
-    String username = "pankajahuja1";
+    String username = System.getenv("BROWSERSTACK_USERNAME") || System.getenv("BROWSERSTACK_USER");
 
-    String accessKey = "aCxhDStUopf8tsyz4d55";
+    String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
     // App url of the uploaded app on BrowserStack.
-    String app = "bs://35d129dfc8b5223d2e6a65e44dab6fbbedf4e1a3";
+    String app = System.getenv("BROWSERSTACK_APP_ID");
     System.out.println("USER" + username);
     System.out.println("KEY" + accessKey);
     System.out.println("App ID" + app);
