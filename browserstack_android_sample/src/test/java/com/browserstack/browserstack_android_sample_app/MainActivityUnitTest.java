@@ -42,9 +42,8 @@ public class MainActivityUnitTest {
       driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
     }
     catch (Exception e) {
-      System.out.println(e.printStackTrace());
+     e.printStackTrace();
     }
-    assert(driver != null);
   }
 
   @After
@@ -53,28 +52,26 @@ public class MainActivityUnitTest {
       driver.quit();
     }
     catch (Exception e) {
-      System.out.println(e.printStackTrace());
+     e.printStackTrace();
     }
   }
 
 
   @Test
   public void checkIfHelloWorldTextViewIsPresent() throws Exception {
-    assert(driver != null);
     String assertionLabel = "TextView with text 'HelloWorld' is present.";
     Thread.sleep(50);
     try {
       List<AndroidElement> elements = driver.findElementsById("HelloWorldTextView");
+      if (elements.size() > 0) {
+        String textViewText = elements.get(0).getText();
+        assertTrue(assertionLabel, textViewText.equals("Hello World!"));
+      } else {
+        assertTrue(assertionLabel, false);
+      }
     }
     catch (Exception e) {
-      System.out.println(e.printStackTrace());
+      e.printStackTrace();
     }
-    if (elements.size() > 0) {
-      String textViewText = elements.get(0).getText();
-      assertTrue(assertionLabel, textViewText.equals("Hello World!"));
-    } else {
-      assertTrue(assertionLabel, false);
-    }
-
   }
 }
