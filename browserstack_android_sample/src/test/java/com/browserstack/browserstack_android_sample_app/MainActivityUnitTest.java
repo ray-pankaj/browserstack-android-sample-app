@@ -42,13 +42,6 @@ public class MainActivityUnitTest {
     assert(driver != null);
   }
 
-  @After
-  public void tearDown() throws Exception {
-    assert(driver != null);
-    driver.quit();
-  }
-
-
   @Test
   public void checkIfHelloWorldTextViewIsPresent() throws Exception {
     assert(driver != null);
