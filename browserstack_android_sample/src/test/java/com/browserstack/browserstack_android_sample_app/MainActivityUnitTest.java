@@ -22,7 +22,7 @@ public class MainActivityUnitTest {
     String server = "hub.browserstack.com";
 
     DesiredCapabilities capabilities = new DesiredCapabilities();
-    capabilities.setCapability("device", "Samsung Galaxy S7");
+    capabilities.setCapability("device", "Google Pixel");
     capabilities.setCapability("build", "junit-browserstack");
     capabilities.setCapability("name", "single_appium_test");
     capabilities.setCapability("browserstack.debug", true);
@@ -38,22 +38,12 @@ public class MainActivityUnitTest {
     System.out.println("App ID" + app);
     capabilities.setCapability("app", app);
 
-    try {
       driver = new AndroidDriver(new URL("http://" + username + ":" + accessKey + "@" + server + "/wd/hub"), capabilities);
-    }
-    catch (Exception e) {
-     e.printStackTrace();
-    }
   }
 
   @After
   public void tearDown() throws Exception {
-    try {
       driver.quit();
-    }
-    catch (Exception e) {
-     e.printStackTrace();
-    }
   }
 
 
@@ -61,7 +51,6 @@ public class MainActivityUnitTest {
   public void checkIfHelloWorldTextViewIsPresent() throws Exception {
     String assertionLabel = "TextView with text 'HelloWorld' is present.";
     Thread.sleep(50);
-    try {
       List<AndroidElement> elements = driver.findElementsById("HelloWorldTextView");
       if (elements.size() > 0) {
         String textViewText = elements.get(0).getText();
@@ -69,9 +58,5 @@ public class MainActivityUnitTest {
       } else {
         assertTrue(assertionLabel, false);
       }
-    }
-    catch (Exception e) {
-      e.printStackTrace();
-    }
   }
 }
