@@ -27,7 +27,7 @@ public class MainActivityUnitTest {
     capabilities.setCapability("name", "single_appium_test");
     capabilities.setCapability("browserstack.debug", true);
 
-    String username = System.getenv("BROWSERSTACK_USER");
+    String username = System.getenv("BROWSERSTACK_USERNAME");
 
     String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
