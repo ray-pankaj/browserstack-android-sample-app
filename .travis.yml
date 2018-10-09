@@ -15,5 +15,7 @@ script:
 addons:
   browserstack:
     username: "pankajahuja1"
-    access_key: 'aCxhDStUopf8tsyz4d55'
+    access_key:
+      secure: "CIBVrBvkyMjrTMt6Mvr1i/RHwe1RO/GCRrMgwzmzJ/LbSTN8pxuhtuDHZzs1v79fuZMUuy6Zy9rnlLvmIf/V0cFfLgIZ0O2Dw8MHSni3eV8gB+evlqS6GDQY/05WLGFBNcOo7ZydLY7b062BIetKvqkNR8Fu6CZEdnHRI1eZkVVROH4DawK3/9cWZdZksILfVHq89z4xqb7IX9MVH746Pm8ZnEssC3GRW+cAfkM7olxcCLHUgbBoavXOwUWYA9EzWzhE7EfX+2+GsVv29oPjJg0sYYKVEFw9/i+w6Uor7DgTv3NXHd8LTFTSfL0Wv+HqogJSVBN9ujQpZjwuJkPpAK8dbWB3TjqGwoGnoztPAoe59mhceHro0CeZk4Ck/OXhp+a/kshMVBYuxEvbNltKJHvefnZ7zUDqUd8ek9JYAeVdOK7UxH6YFmejXV71JimNl1Od31knmLuvZnBMxZ5RD4LGOM+EjKE+PUDK1pQWefUZVzTn4K4+NvEHO83A5a9bfyA0g5ZVoMu98e4i2lVxAxExKOlRJGq76uSShT2yvBiOkeswj8f4zU6IPH1q8s8TNyPZKZuXEiarFFD/T9W9J1OQ3PBUIPvOpJM5X39FTSB6v1KeI/b25HsIzgmChUK+PBvhZVlXzICpEgJ2E6CmnCH0lAY82sniZoArzuqm2oY="
     app_path: 'browserstack_android_sample/build/outputs/apk/debug/browserstack_android_sample-debug.apk'
+    custom_id: 'testcustomid'

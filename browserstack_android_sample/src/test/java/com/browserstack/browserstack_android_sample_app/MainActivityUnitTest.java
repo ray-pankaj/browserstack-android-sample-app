@@ -32,7 +32,7 @@ public class MainActivityUnitTest {
     String accessKey = System.getenv("BROWSERSTACK_ACCESS_KEY");
 
     // App url of the uploaded app on BrowserStack.
-    String app = System.getenv("BROWSERSTACK_APP_ID");
+    String app = System.getenv("BROWSERSTACK_CUSTOM_ID");
     System.out.println("USER" + username);
     System.out.println("KEY" + accessKey);
     System.out.println("App ID" + app);
